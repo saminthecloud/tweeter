@@ -16,8 +16,15 @@ article.tweet header {
     flex-direction: row;
 }
 
+.user-pic {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
 span.tweet-handle {
     margin-left: auto;
+    padding-right: 10px;
 }
 
 span.tweet-name {
