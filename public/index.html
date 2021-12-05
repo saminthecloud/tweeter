@@ -18,11 +18,15 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -33,18 +37,18 @@
       <span id="write-tweet">
         <strong>Write</strong> a new tweet
         </br>
-        <i class="fa-solid fa-angles-down"></i>
+        <i class="fa-solid fa-angles-down" id="angles-down"></i>
         <!-- <i id = doubledownicon class="fa-solid fa-angles-down fa-xs animate-bounce"></i> -->
       </span>
     </nav>
 
-    <header>
+    <header id="header">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
       <br>
       <div>
-          <h2 id="name">Amy Mansell</h2>
+          <h2 id="profile-name">Amy Mansell</h2>
       </div>
     </header>
 
@@ -61,6 +65,23 @@
           </div>
         </form>
       </section>
+
+      <article class="tweet">
+        <header>
+          <span class="tweet-name">Kevin</span>
+          <span class="tweet-handle">@Kevin</a></span>
+        </header>
+        <p class="bold tweet-text">I am tweeting and I am a great tweeter. I can re-tweet all I want</p>
+        <footer>
+          <span class="date-tweeted">timeago.format(1473245023718)</span>
+          
+          <span class="actions">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </span>
+        </footer>
+      </article>
 
     </main>
   </body>

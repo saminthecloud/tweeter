@@ -5,11 +5,10 @@ nav {
     padding-top: 1.5em;
     padding-left: 1.5em;
     padding-right: 1.5em;
-    position: relative;
+    position: fixed;
+    width: 100%;
     z-index: 100;
 }
-
-
 
 
 #tweeter {
@@ -20,7 +19,7 @@ nav {
     float: right;
 }
 
-.fa-solid {
+#angles-down {
     float: right;
     color: red;
     padding-right: 3.3em;

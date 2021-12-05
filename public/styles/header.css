@@ -1,6 +1,8 @@
-header {
-    height: 400px;
+#header {
+    height: 490px;
     background-color: orange;
+    padding-top: 150px;
+    padding-bottom: 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,7 +12,10 @@ header {
     background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
 }
 
-.name {
+#profile-name {
     display: flex;
     flex-shrink: 1;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    
 }
