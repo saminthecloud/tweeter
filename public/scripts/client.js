@@ -60,3 +60,11 @@ const data = [
   $(document).ready(() => {
     renderTweets(data);
 })
+
+
+$("#target").submit( function (event) {
+    event.preventDefault();
+    $.post("/tweets", $("#target").serialize(), (data) => {
+        $('#tweet-text').val("")
+    })
+    })

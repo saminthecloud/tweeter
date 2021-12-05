@@ -38,7 +38,6 @@
         <strong>Write</strong> a new tweet
         </br>
         <i class="fa-solid fa-angles-down" id="angles-down"></i>
-        <!-- <i id = doubledownicon class="fa-solid fa-angles-down fa-xs animate-bounce"></i> -->
       </span>
     </nav>
 
@@ -56,33 +55,17 @@
     <main class="container">
 
       <section class="new-tweet">
-        <form method="POST" action="/tweets">
+        <form method="POST" action="/tweets"  id="target">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div>
-            <button type="submit">Tweet</button>
+            <button type="submit" id="buttonId">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
 
       <section class="tweets-container"></section>
-      <!-- <article class="tweet">
-        <header>
-          <span class="tweet-name">Kevin</span>
-          <span class="tweet-handle">@Kevin</a></span>
-        </header>
-        <p class="bold tweet-text">I am tweeting and I am a great tweeter. I can re-tweet all I want</p>
-        <footer>
-          <span class="date-tweeted">timeago.format(1473245023718)</span>
-          
-          <span class="actions">
-            <i class="fa-solid fa-flag"></i>
-            <i class="fa-solid fa-retweet"></i>
-            <i class="fa-solid fa-heart"></i>
-          </span>
-        </footer>
-      </article> -->
 
     </main>
   </body>
