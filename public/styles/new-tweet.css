@@ -1,0 +1,27 @@
+textarea {
+  flex: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: solid 5px black;
+  margin-bottom: 1em;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+button {
+    background-color: #143cbe;
+    font-family: 'Bungee', sans-serif;
+    color: white;
+    outline: none;
+  }
+
+.counter {
+    font-family: 'Bungee', sans-serif;
+    position: relative;
+    text-align: right;
+    float: right;
+  
+}
