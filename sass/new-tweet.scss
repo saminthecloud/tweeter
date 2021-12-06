@@ -1,0 +1,39 @@
+$font-stack-primary: 'Source Sans Pro', sans-serif;
+$font-stack-emphasis: 'Bungee', sans-serif;
+
+textarea {
+  flex: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: solid 5px black;
+  margin-bottom: 1em;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#error-message {
+  font-family: $font-stack-primary;
+  font-weight: bold;
+  position: relative;
+  color: red;
+  text-align: center;
+  border: 5px solid red;
+  margin: 1em;
+}
+
+#buttonId {
+    background-color: #143cbe;
+    font-family: $font-stack-emphasis;
+    color: white;
+    outline: none;
+  } 
+
+#counter {
+    font-family: $font-stack-emphasis;
+    position: relative;
+    text-align: right;
+    float: right;
+}

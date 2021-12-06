@@ -4,16 +4,16 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-const escape = function (str) {
-    let div = document.createElement("div");
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  };
+// Escape function to avoid Cross site scripting
+const escape = function(str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
   
-
-  const createTweetElement = function(tweet) {
-    let $tweet = 
+// Create tweets
+const createTweetElement = function(tweet) {
+  let $tweet =
     `<article class="tweet">
     <header>
       <img class="user-pic" src="${tweet.user.avatars}"/>
@@ -29,54 +29,56 @@ const escape = function (str) {
         <i class="fa-solid fa-heart"></i>
       </span>
     </footer>
-  </article>`
-    return $tweet;
-  }   
+  </article>`;
+  return $tweet;
+};
 
-  const renderTweets = function(tweets) {
-    $('.tweets-container').val("");
-    for (let tweet of tweets) {
-        $(".tweets-container").prepend(createTweetElement(tweet));
-    }
+// Render all tweets
+const renderTweets = function(tweets) {
+  $('.tweets-container').val("");
+  for (let tweet of tweets) {
+    $(".tweets-container").prepend(createTweetElement(tweet));
   }
+};
 
-  const renderNewTweet = function(tweets) {
-    $('.tweets-container').val("");
-    $(".tweets-container").prepend(createTweetElement(tweets[tweets.length - 1]));
-    
-  }
+// Render new tweet
+const renderNewTweet = function(tweets) {
+  $(".tweets-container").prepend(createTweetElement(tweets[tweets.length - 1]));
+};
 
-  const loadTweets = function(showTweets) {
-      $.get("/tweets", {}, function(data, textStatus, jqXHR) {
-        if (textStatus === 'success') {
-            showTweets(data);
-            console.log('Status:', textStatus);
-            console.log("Data:", data);
-        } else alert ("Error retrieving tweets. Status code:", textStatus);
+// Load tweets
+const loadTweets = function(showTweets) {
+  $.get("/tweets", {}, function(data, textStatus, jqXHR) {
+    if (textStatus === 'success') {
+      showTweets(data);
+      console.log('Status:', textStatus);
+      console.log("Data:", data);
+    } else alert("Error retrieving tweets. Status code:", textStatus);
         
-      })
-  }
+  });
+};
 
-  $(document).ready(() => {
-    $('#error-message').hide();
-    $(".tweets-container").val("");
-    loadTweets(renderTweets);
+// Document Ready
+$(document).ready(() => {
+  $('#error-message').hide();
+  $(".tweets-container").val("");
+  loadTweets(renderTweets);
 
-    $("#target").submit( function (event) {
-        event.preventDefault();
-        if ($('#tweet-text').val().length === 0) {
-            $('#error-message').text("Empty tweet!");
-            $('#error-message').show();
-        } else if ($('#tweet-text').val().length > 140) {
-            $('#error-message').text("Tweet is more than 140 characters!");
-            $('#error-message').show();
-        } else {
-            $.post("/tweets", $("#target").serialize(), (data) => {
-                $('#tweet-text').val("");
-                $('#error-message').hide();
-                $(".tweets-container").val("");
-                loadTweets(renderNewTweet);
-            })
-        }
-    })
-})
+  $("#target").submit(function(event) {
+    event.preventDefault();
+    if ($('#tweet-text').val().length === 0) {
+      $('#error-message').text("Empty tweet!");
+      $('#error-message').show();
+    } else if ($('#tweet-text').val().length > 140) {
+      $('#error-message').text("Tweet is more than 140 characters!");
+      $('#error-message').show();
+    } else {
+      $.post("/tweets", $("#target").serialize(), (data) => {
+        $('#tweet-text').val("");
+        $('#error-message').hide();
+        $(".tweets-container").val("");
+        loadTweets(renderNewTweet);
+      });
+    }
+  });
+});

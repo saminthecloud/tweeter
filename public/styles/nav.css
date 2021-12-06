@@ -1,42 +1,30 @@
-
-
 nav {
+  background-color: orange;
+  color: #FFFFFF;
+  height: 120px;
+  padding-top: 1.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+}
+nav #tweeter {
+  font-family: "Bungee", sans-serif;
+}
+nav #write-tweet {
+  float: right;
+}
+nav #write-tweet #angles-down {
+  float: right;
+  color: red;
+  padding-right: 3.3em;
+}
+
+@media screen and (min-width: 1024px) {
+  nav {
     background-color: #4056A1;
-    color: #FFFFFF;
-    height: 120px;
-    padding-top: 1.5em;
-    padding-left: 1.5em;
-    padding-right: 1.5em;
-    position: fixed;
-    width: 100%;
-    z-index: 100;
-}
-
-
-#tweeter {
-    font-family: "Bungee";
-}
-
-#write-tweet {
-    float: right;
-}
-
-#angles-down {
-    float: right;
-    color: red;
-    padding-right: 3.3em;
-}
-
-/* @media screen and (max-width: 1024px) and (min-width: 768px) {
-    nav {
-      position:fixed;
-      height: 120px;
-      width: 100%;
-      background-color:#4056A1 ;
-      color:#ffff;
-      padding-left: 1.5em;
-      padding-right:1.5em;
-  
-      flex-direction: column;
+    background-image: none;
   }
-} */
+}

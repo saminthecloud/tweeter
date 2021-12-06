@@ -12,7 +12,7 @@ form {
 }
 
 #error-message {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: bold;
   position: relative;
   color: red;
@@ -22,15 +22,15 @@ form {
 }
 
 #buttonId {
-    background-color: #143cbe;
-    font-family: 'Bungee', sans-serif;
-    color: white;
-    outline: none;
-  } 
+  background-color: #143cbe;
+  font-family: "Bungee", sans-serif;
+  color: white;
+  outline: none;
+}
 
 #counter {
-    font-family: 'Bungee', sans-serif;
-    position: relative;
-    text-align: right;
-    float: right;
+  font-family: "Bungee", sans-serif;
+  position: relative;
+  text-align: right;
+  float: right;
 }
