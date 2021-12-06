@@ -16,3 +16,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+
+!["Screenshot of Desktop View"](https://github.com/saminthecloud/tweeter/blob/master/docs/desktop-view.png)
+!["Screenshot of Mobile View"](https://github.com/saminthecloud/tweeter/blob/master/docs/mobile-view.png)
+!["Screenshot of a successful tweet"](https://github.com/saminthecloud/tweeter/blob/master/docs/successful-tweet.png)
+!["Screenshot of an empty tweet"](https://github.com/saminthecloud/tweeter/blob/master/docs/empty-tweet.png)
+!["Screenshot of a large tweet"](https://github.com/saminthecloud/tweeter/blob/master/docs/large-tweet.png)
