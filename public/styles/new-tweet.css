@@ -11,17 +11,26 @@ form {
   flex-wrap: wrap;
 }
 
-button {
+#error-message {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  position: relative;
+  color: red;
+  text-align: center;
+  border: 5px solid red;
+  margin: 1em;
+}
+
+#buttonId {
     background-color: #143cbe;
     font-family: 'Bungee', sans-serif;
     color: white;
     outline: none;
-  }
+  } 
 
-.counter {
+#counter {
     font-family: 'Bungee', sans-serif;
     position: relative;
     text-align: right;
     float: right;
-  
 }
