@@ -34,15 +34,22 @@ const escape = function (str) {
   }   
 
   const renderTweets = function(tweets) {
+    $('.tweets-container').val("");
     for (let tweet of tweets) {
         $(".tweets-container").prepend(createTweetElement(tweet));
     }
   }
 
-  const loadTweets = function() {
+  const renderNewTweet = function(tweets) {
+    $('.tweets-container').val("");
+    $(".tweets-container").prepend(createTweetElement(tweets[tweets.length - 1]));
+    
+  }
+
+  const loadTweets = function(showTweets) {
       $.get("/tweets", {}, function(data, textStatus, jqXHR) {
         if (textStatus === 'success') {
-            renderTweets(data);
+            showTweets(data);
             console.log('Status:', textStatus);
             console.log("Data:", data);
         } else alert ("Error retrieving tweets. Status code:", textStatus);
@@ -52,7 +59,8 @@ const escape = function (str) {
 
   $(document).ready(() => {
     $('#error-message').hide();
-    loadTweets();
+    $(".tweets-container").val("");
+    loadTweets(renderTweets);
 
     $("#target").submit( function (event) {
         event.preventDefault();
@@ -66,7 +74,8 @@ const escape = function (str) {
             $.post("/tweets", $("#target").serialize(), (data) => {
                 $('#tweet-text').val("");
                 $('#error-message').hide();
-                loadTweets();
+                $(".tweets-container").val("");
+                loadTweets(renderNewTweet);
             })
         }
     })

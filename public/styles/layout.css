@@ -25,14 +25,44 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- /* main {
-   width: 90%;
-   display: flex;
+main {
+  width: 90%;
+  display: flex;
    flex-direction: column;
-   justify-content: center;
    margin: auto;
-   align-items: center;
    background-color: #f4f1ec;
- }  */
+}
 
- 
+/* @media screen and (max-width: 1024px) and (min-width: 768px) {
+  nav {
+    position:fixed;
+    height: 120px;
+    width: 100%;
+    background-color:#4056A1 ;
+    color:#ffff;
+    padding-left: 1.5em;
+    padding-right:1.5em;
+
+    flex-direction: column;
+}
+} */
+
+@media (min-width: 1024px) {
+  
+  body {
+    display: flex;
+  }
+
+  header {
+    /* position: fixed; */
+    width: 30%;
+    margin-left: 0.5em;
+    /* padding-top: 50em; */
+    /* border-radius: 5%; */
+  }
+
+  main {
+    width: 50%;
+    margin-right: 3em;
+  }
+}
